@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <title> Buon Natale</title>
+  <link rel="icon" href="photos/cuore.png"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  
+  <style type="text/css">
+    :root{
+      --color-eda:  #357172 ;
+    }
+    
+    .bordi {
+      border: 0.3em solid whitesmoke ;
+    }
+    
+    body {
+      background: #121212;
+      margin: 2% 10%;
+    }
+    
+    .opaca {
+      background: white;
+      opacity: 100%;
+    }
+    .carouselExampleCaptions {
+      padding: auto;
+      width: 25%;
+    }
+
+    blockquote footer img {
+      width: 2% !important;
+      overflow: auto;
+    }
+
+    h5, p {
+      color: black;
+    }
+    
+    [id*="carosello-"] {
+      margin-top: 5%;
+    }
+    #carosello-2 h3 h5 p{
+      color: fuchsia;
+    }
+    #baci-foto img{
+      margin: 0;
+      padding: 0;
+      width: 30%;
+    }
+    
+    #img-bacio-2 {
+      width: 34% !important;
+    }
+    #video {
+      margin-top: 5%;
+    }
+    video{
+      width: 35%;
+    }
+    
+    .container h1 {
+      position: relative;
+      overflow: hidden;
+    }
+    .container h1::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background-color: #357172 ;
+      animation: word 2s cubic-bezier(.53,0,.18,.01) forwards;
+    }
+    .container h1::after {
+      content: "";
+      background: #357172;
+      width: 100%;
+      height: 100%;
+      top:0;
+      right: 0;
+      position: absolute;
+      animation: cover 2s cubic-bezier(.53,0,.18,.01) forwards;
+      transform: translateX(-111%);
+    }
+    .container h1:nth-of-type(1)::after, .container h1:nth-of-type(1)::before{
+      animation-delay: 1s;
+    }
+    .container h1:nth-of-type(2)::after, .container h1:nth-of-type(2)::before{
+      animation-delay: 1.5s;
+    }
+    #box h1::before {
+      transform: translateY(50em);
+    }
+    @keyframes cover {
+      0% { transform: translateX(-100%)}
+      100% { transform: translateX(-100%)}
+    }
+    @keyframes word {
+      0% { transform: translateX(0%)}
+      100% { transform: translateX(100%)}
+    }
+    
+    .one {
+      -webkit-text-fill-color: black;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: yellow;
+      border: 1px solid yellow;
+    }
+    
+    #box {
+      transition: transform 0.6s ease;
+    }
+    
+    #test {
+      -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+      animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Opera < 12.1 */
+    @-o-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    @media only screen and (max-width: 768px) {
+      body{
+        margin: 2% 10%;
+      }
+      blockquote footer {
+        width: 100%;
+      }
+      blockquote footer img {
+        width: 7% !important;
+      }
+      h5, p {
+        width: 100%;
+        color: black;
+      }
+      video {
+        width: 80%;
+      }
+      #baci-foto img{
+        margin: 0;
+        padding: 0;
+        width: 90%;
+      }
+      
+      .title-baci {
+        font-size: 93%;
+      }
+      .carouselExampleCaptions{
+        width: 100%;
+        padding: auto;
+      }
+      .opaca {
+        background: white;
+        opacity: 100%;
+      }
+      [id*="carosello-"] {
+        margin-top: 5%;
+      }
+      
+      #img-bacio-2 {
+        width: 91.3% !important;
+      }
+      #zebbino{
+        padding-top: 33%;
+        width: 99%;
+      }
+      #baci {
+        margin-top: 10%;
+      }
+    }
+   
+  </style>
+
+</head>
+
+<body class="text-center">
+  <div id="box" onclick="zebbi()">
+    <h1 class="one rounded" style="margin-top: 30%"> SPACCHETTA <br>IL TUO REGALO! </h1>
+  </div>
+  
+  <div id="tutto" hidden>
+    <blockquote class="blockquote text-center container">
+      <h1 style="color: whitesmoke"> Buon natale </h1>
+      <h1 style="color: whitesmoke" id="titolone"> Ciccia</h1>
+      <footer class="blockquote-footer"> <cite title="Source Title"> Ti amo </cite><img src="photos/cuore.png" alt="ops..." ></footer>
+    </blockquote>
+    
+    <div id="test">
+      <div id="carosello-1" class="fade">
+        <blockquote class="blockquote text-center">
+          <h3 style="color: slategray"> Io e te insieme </h3>
+          <footer class="blockquote-footer"><img src="photos/lovers-2761557_1920.png" alt="ops..." class="mx-auto"></footer>
+        </blockquote>
+    
+        <div id="carouselExampleCaptions" class="carousel slide mx-auto carouselExampleCaptions" data-ride="carousel">
+          <ol class="carousel-indicators" id="carosello-lista1">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+      
+          <div class="carousel-inner rounded bordi" id="container1">
+            <div class="carousel-item active">
+              <img src="photos/img1.jpg" class="d-block w-100 mx-auto" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5>Il nostro primo(secondo) bacio</h5>
+                <p> Che primo bacio pazzesco al compleanno della sveva <br><cite title="Source Title"> 7 Giugno 2019 </cite> </p>
+              </div>
+            </div>
+        
+            <div class="carousel-item">
+              <img src="photos/img2.jpg" class="d-block w-100 img-fluid" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5> Come eravamo belli</h5>
+                <p> (Io, te sei sempre stata inferiore) <br> <cite title="Source Title"> 20 Agosto 2019 </cite> </p>
+              </div>
+            </div>
+        
+            <div class="carousel-item">
+              <img src="photos/img3.jpg" class="d-block w-100 img-fluid rounded" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5> The photogenig </h5>
+                <p> Direi che traspare la nostra fotogenicità(voglio almeno un punto in più per questa parola...)</p>
+              </div>
+            </div>
+          </div>
+      
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+  
+      <div id="carosello-2" class="fade">
+        <blockquote class="blockquote text-center">
+          <h3 style="color: slategray"> Tu incazzata con me </h3>
+          <footer class="blockquote-footer"><img src="photos/1f595-1f3fd.png" alt="ops..." class="mx-auto"></footer>
+        </blockquote>
+    
+        <div id="carouselExampleCaptions2" class="carousel slide mx-auto carouselExampleCaptions rounded bordi" data-ride="carousel">
+          <ol class="carousel-indicators" id="carosello-lista2">
+            <li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions2" data-slide-to="2"></li>
+          </ol>
+      
+          <div class="carousel-inner" id="container2">
+            <div class="carousel-item active">
+              <img src="photos/img11.jpg" class="d-block w-100 mx-auto" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5>Il nostro primo(secondo) bacio</h5>
+                <p> Che primo bacio pazzesco al compleanno della sveva <br><cite title="Source Title"> 7 Giugno 2019 </cite> </p>
+              </div>
+            </div>
+        
+            <div class="carousel-item">
+              <img src="photos/img13.jpg" class="d-block w-100 img-fluid rounded" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5> Come eravamo belli</h5>
+                <p> (Io, te sei sempre stata inferiore) <br> <cite title="Source Title"> 20 Agosto 2019 </cite> </p>
+              </div>
+            </div>
+        
+            <div class="carousel-item">
+              <img src="photos/img15.jpg" class="d-block w-100 img-fluid rounded" alt="...">
+              <div class="carousel-caption d-md-block rounded opaca">
+                <h5> The photogenig </h5>
+                <p> Direi che traspare la nostra fotogenicità(voglio almeno un punto in più per questa parola...)</p>
+              </div>
+            </div>
+          </div>
+      
+          <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+  
+      <div id="baci" class="fade">
+        <div style="columns: 2" id="baci-foto">
+      
+          <div id="bacio-1">
+            <blockquote class="blockquote text-center">
+              <h3 style="color: slategray" class="title-baci"> Il nostro primo bacio... </h3>
+              <footer class="blockquote-footer"><img src="photos/emoticons.png" alt="ops..." class="mx-auto"></footer>
+            </blockquote>
+            <div id="zebbino">
+              <img id="img-bacio-1" src="photos/img1.jpg" alt="..." class="bordi rounded">
+            </div>
+          </div>
+      
+          <div id="bacio-2">
+            <blockquote class="blockquote text-center">
+              <h3 style="color: slategray" class="title-baci"> ...Il nostro bacio ora </h3>
+              <footer class="blockquote-footer"> Nota, com'è cambiata la felicità <img src="photos/emoticons.png" alt="ops..." class="mx-auto"></footer>
+            </blockquote>
+            <img id="img-bacio-2" src="photos/img33.jpg" alt="..." class="bordi rounded">
+          </div>
+    
+        </div>
+      </div>
+  
+      <div id="video" class="text-center fade">
+        <blockquote class="blockquote text-center">
+          <h3 style="color: slategray" class=""> Il primo tradimento... </h3>
+          <footer class="blockquote-footer"> [Immagine rappresentativa di un tradimento, che non ho trovato] </footer>
+        </blockquote>
+        <video controls loop class="bordi rounded fluid">
+          <source src="VID_255270522_211415_836.mp4" type="video/mp4" title="Il tradimento">
+        </video>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    let last = 2
+    let last2 = 2
+    function upList(num) {
+      let ol = document.getElementById(`carosello-lista${num}`)
+      let li = document.createElement("li")
+      li.setAttribute("data-target","#carouselExampleCaptions")
+      li.setAttribute("data-slide-to", `${last++}`)
+      ol.appendChild(li)
+    }
+    
+    function upDiv(src, title, description = "", data = "", caroselNum) {
+      let container = document.getElementById(`container${caroselNum}`)
+      
+      let div1 = document.createElement("div");
+        div1.setAttribute("class","carousel-item")
+      let img = document.createElement("img");
+        img.src = src
+        img.setAttribute("class","d-block w-100 img-fluid")
+        img.alt = "..."
+      let div2 = document.createElement("div")
+        div2.setAttribute("class","carousel-caption d-md-block rounded opaca")
+      let h5 = document.createElement("h5")
+        h5.innerHTML = title
+      let p = document.createElement("p")
+        p.innerHTML = description
+      let br = document.createElement("br")
+      let cite = document.createElement("cite")
+        cite.title = "Source Title"
+        cite.innerHTML = data
+      
+      if (data) p.appendChild(br)
+      p.appendChild(cite)
+      div2.appendChild(h5)
+      div2.appendChild(p)
+      div1.appendChild(img)
+      div1.appendChild(div2)
+      container.appendChild(div1)
+    }
+    
+    [ [16, "Primi diti medi", "Credo sia tra i primi diti medi che tu mi abbia mai mandato", "11 Luglio 2019"],
+      [15, "Cazzetto", "Come al solito parli male di ABjr... Stronza....", "29 Luglio 2019"],
+      [17, "Faccina da culo", "Dio va che faccia da schiaffi che hai qua", "13 Agosto 2019"],
+      [18, "Vaffanculo + Bacio", "Direi che sei riuscita a unire un fantastico sguardo ammagliante e seducente, con tanto di bacino a un dito medio da urlo ", "21 Agosto 2019"],
+      [26, "La 'superiortà' (di quella che fa il moro)", "E' palese che tu abbia qualcosa da ridire ma non puoi farlo se non sei al mio livello", "9 Settembre 2019"],
+      [27, "La panterona", "Ti dona quel copleto, però lo preferisco senza quel brutto dito medio", "16 Settembre 2019"],
+      [35, "L'intellettuale lvl base", "Dio va se sembri cattiva e minacciosa, mi tremano le gambe a vedere questa foto", "29 Ottobre 2019"],
+      [36, "L'intellettuale super Sayan", "Qua sei proprio salita di livello rispetto a quella precedente, si vede che ti sei impegnata di più", "29 Ottobre 2019"]
+    ]
+      .forEach(e => {
+      upDiv(`./photos/img${e[0]}.jpg`, e[1], e[2], e[3], 2)
+      upList(2)
+      last2 += 1
+    })
+    
+    ;[ [3, "L'intesa che conta pt. 1", "Che intesa, e che sguardi commoventi", "20 Agosto 2019"], [4, "L'intesa che conta pt. 2", "", "20 Agosto 2019"],
+      [5, "2 coglioni felici pt. 1", "", ""], [6, "2 coglioni felici pt. 2", "", ""],
+      [7, "Un mona e una lingua", "Quanto cazzo è bella la mia lingua? ", ""],
+      [9, "Fescion bloggher confirmed", "Il titolo è autoesplicativo... ", ""],
+      [20, "Un mona con dei capelli", "Ci sono più capelli che tua faccia", ""],
+      [19, "Una donna e un'ascella", "Dio va... Ho un botto di peli, mi sa che devo iniziare a tagliarmeli", "29 Agosto 2019"],
+      [22, "Un nero e la sua finta ragazza nera", "Non sei nera come me... Nè dentro nè fuori, è inutile che provi a farl con quelle pose", ""],
+      [33, "Il trash", "Quella serata direi che è stat la più bella e la più pazza, tra ascensore e il resto... Wow...", "26 Ottobre 2019"] ]
+      .forEach( e => {
+      upDiv(`./photos/img${e[0]}.jpg`, e[1], e[2], e[3], 1)
+      upList(1)
+      last += 1
+    })
+  </script>
+
+  <script>
+    function zebbi(){
+      $(document).ready(() => {
+        $('#box').click(() => {
+          $('#box').css("transform","translateY(-50em)")
+        })
+      })
+    }
+    
+    const el = document.getElementById("box")
+    el.addEventListener('transitionend', () => {
+      let all = document.getElementById("tutto")
+      all.removeAttribute("hidden")
+      document.getElementById("box").remove()
+    })
+    
+    $(window).on("load",function() {
+      function fade(pageLoad) {
+        var windowTop=$(window).scrollTop(), windowBottom=windowTop+$(window).innerHeight();
+        var min=0.3, max=0.7, threshold=0.01;
+
+        $(".fade").each(function() {
+          /* Check the location of each desired element */
+          var objectHeight=$(this).outerHeight(), objectTop=$(this).offset().top, objectBottom=$(this).offset().top+objectHeight;
+
+          /* Fade element in/out based on its visible percentage */
+          if (objectTop < windowTop) {
+            if (objectBottom > windowTop) {$(this).fadeTo(0,min+((max-min)*((objectBottom-windowTop)/objectHeight)));}
+            else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
+          } else if (objectBottom > windowBottom) {
+            if (objectTop < windowBottom) {$(this).fadeTo(0,min+((max-min)*((windowBottom-objectTop)/objectHeight)));}
+            else if ($(this).css("opacity")>=min+threshold || pageLoad) {$(this).fadeTo(0,min);}
+          } else if ($(this).css("opacity")<=max-threshold || pageLoad) {$(this).fadeTo(0,max);}
+        });
+      } fade(true); //fade elements on page-load
+      $(window).scroll(function(){fade(false);}); //fade elements on scroll
+    });
+  </script>
+</body>
+</html>
