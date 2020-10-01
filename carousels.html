@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Gigia questa è la nostra storia" />
+  <meta name="author" content="Zebbi & Co." />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+  <title>Our photos</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/cuore.png" />
+</head>
+
+<style>
+  /* Navigation*/
+  .navbar {
+    background-color: transparent;
+  }
+
+  .scrolling-navbar {
+    transition: background .5s ease-in-out, padding .5s ease-in-out;
+  }
+
+  .top-nav-collapse {
+    background-color: #667490;
+  }
+
+  footer.page-footer {
+    background-color: #667490;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      background-color: #667490;
+    }
+  }
+
+  html,
+  body,
+  .view {
+    height: 100%;
+  }
+
+  /* Carousel*/
+  .carousel,
+  .carousel-item,
+  .carousel-item.active {
+    height: 100%;
+  }
+
+  .carousel-inner {
+    height: 100%;
+  }
+
+  .carousel-item:nth-child(1) {
+    background-image: url("/assets/img/capodanno.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .carousel-item:nth-child(2) {
+    background-image: url("/assets/img/img13.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .carousel-item:nth-child(3) {
+    background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(10).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+</style>
+
+<body>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark scrolling-navbar fixed-top">
+
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">
+      <div>
+        Home
+      </div>
+    </a>
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" onclick="build('photo1')">
+          <div class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" onclick="build('photo2')">Features</div>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link" onclick="build('photo2')">Pricing</div>
+        </li>
+      </ul>
+    </div>
+    <!-- Collapsible content -->
+
+  </nav>
+  <!--/.Navbar-->
+
+  <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-1" data-slide-to="1"></li>
+      <li data-target="#carousel-example-1" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+        <!--Mask-->
+        <div class="view">
+          <div class="full-bg-img flex-center mask rgba-indigo-light white-text">
+            <ul class="animated fadeInUp col-md-12 list-unstyled list-inline">
+              <li>
+                <h1 class="font-weight-bold text-uppercase">Material Design for Bootstrap 4</h1>
+              </li>
+              <li>
+                <p class="font-weight-bold text-uppercase py-4">The most powerful and free UI KIT for Bootstrap</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/.Mask-->
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide -->
+      <div class="carousel-item">
+        <!--Mask-->
+        <div class="view">
+          <div class="full-bg-img flex-center mask rgba-purple-light white-text">
+            <ul class="animated fadeInUp col-md-12 list-unstyled">
+              <li>
+                <h1 class="font-weight-bold text-uppercase">Lots of tutorials at your disposal</h1>
+              </li>
+              <li>
+                <p class="font-weight-bold text-uppercase py-4">And all of them are FREE!</p>
+              </li>
+              <li>
+                <a target="_blank" href="https://mdbootstrap.com/bootstrap-tutorial/"
+                  class="btn btn-primary btn-rounded btn-lg">Start learning</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/.Mask-->
+      </div>
+      <!--/.Second slide -->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+        <!--Mask-->
+        <div class="view">
+          <div class="full-bg-img flex-center mask rgba-blue-light white-text">
+            <ul class="animated fadeInUp col-md-12 list-unstyled">
+              <li>
+                <h1 class="font-weight-bold text-uppercase">Visit our support forum</h1>
+              </li>
+              <li>
+                <p class="font-weight-bold text-uppercase py-4">Our community can help you with any question</p>
+              </li>
+              <li>
+                <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/"
+                  class="btn btn-lg btn-indigo btn-rounded">Support forum</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!--/.Mask-->
+      </div>
+      <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+    <!--Controls-->
+    <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+  </div>
+  <!--/.Carousel Wrapper-->
+  <script src="js/helpers.js"></script>
+  <script>
+    const params = getParams()
+    const current = '<span class="sr-only">(current)</span>'
+    console.log(params)
+  </script>
+
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+</body>
+
+</html>

@@ -62,7 +62,7 @@
   <section class="projects-section bg-light" id="projects">
     <div class="container">
 
-      <!-- L'inizio -->
+      <!-- L'inizio (Introduction card) -->
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
           <img class="img-fluid mb-3 mb-lg-0" src="assets/img/photo6023661413706347064.jpg" alt="" />
@@ -182,7 +182,7 @@
         </div>
       </div>
 
-      <!-- Demo -->
+      <!-- WIP Quarantena -->
       <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
         <div class="col-lg-6" style="background: var(--black)">
           <img class="img-fluid" src="assets/img/la-quarantena.jpeg" alt="" />
@@ -204,7 +204,7 @@
         </div>
       </div>
 
-      <!-- Demo -->
+      <!-- WIP Convivenza -->
       <div class="row justify-content-center no-gutters mb-4 mb-lg-5">
         <div class="col-lg-6">
           <img class="img-fluid" src="assets/img/la-convivenza.jpeg" alt="" />
@@ -234,14 +234,20 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-lg-8 mx-auto text-center">
-          <h2 class="text-white mb-5">
+          <h2 class="text-white mb-2">
             Come tutte le storie anche questa ha un fine, solo perchè è ancora da vivere...
           </h2>
-          <form class="form-inline d-flex">
+          <hr class="my-4 w-50" style="border-color: #64a19d; border-width: 0.25rem;" />
+          <h3 class="text-white mb-5">
+            Se vuoi vedere delle belle storie scegli un'album qui sotto
+          </h3>
+          <!-- <form class="form-inline d-flex">
             <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email"
               placeholder="Enter email address..." />
-            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
-          </form>
+            <a href="./WIP-page/index.html">
+              <button class="btn btn-primary mx-auto" type="button">Subscribe</button>
+            </a>
+          </form> -->
         </div>
       </div>
     </div>
@@ -253,32 +259,36 @@
       <div class="row">
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <a href="#/album2">
-                <h4 class="text-uppercase m-0">Album 1</h4>
-              </a>
-              <hr class="my-4" />
-              <div class="small text-black-50"></div>
-            </div>
+            <a href=".WIP-page/index.html?album=1">
+              <div class="card-body text-center">
+                <i class="fas fa-images text-primary mb-2"></i>
+                <a href="WIP-page/index.html?album=1">
+                  <h4 class="text-uppercase m-0">Album 1</h4>
+                </a>
+                <hr class="my-4" />
+                <div class="small text-black-50"></div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="card py-4 h-100">
+            <a href="WIP-page/index.html?album=2">
+              <div class="card-body text-center">
+                <i class="fas fa-images text-primary mb-2"></i>
+                <a href="WIP-page/index.html?album=2">
+                  <h4 class="text-uppercase m-0">Album 2</h4>
+                </a>
+                <hr class="my-4" />
+              </div>
+            </a>
           </div>
         </div>
         <div class="col-md-4 mb-3 mb-md-0">
           <div class="card py-4 h-100">
             <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <a href="#/album2">
-                <h4 class="text-uppercase m-0">Album 2</h4>
-              </a>
-              <hr class="my-4" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <a href="#/album2">
+              <i class="fas fa-images text-primary mb-2"></i>
+              <a href="WIP-page/index.html?album=3">
                 <h4 class="text-uppercase m-0">Album 3</h4>
               </a>
               <hr class="my-4" />
@@ -308,6 +318,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
+  <script src="js/helpers.js"></script>
+  <script>
+    const params = getParams()
+    console.log(params)
+  </script>
 </body>
 
 </html>
