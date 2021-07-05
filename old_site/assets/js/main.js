@@ -53,20 +53,17 @@ const data = [
     }
   }
 
-// TODO: uncomment this
-  el.addEventListener('transitionend', () => {
+  el.addEventListener("transitionend", () => {
     all.removeAttribute("hidden")
     document.getElementById("box").remove()
   })
 })()
 
 
-
-
-$("#carouselExampleCaptions").on('slide.bs.carousel',
+$("#carouselExampleCaptions").on("slide.bs.carousel",
   (e) => handleCarouselChange({ e, carouselNum: 0 })
 )
 
-$("#carouselExampleCaptions2").on('slide.bs.carousel',
+$("#carouselExampleCaptions2").on("slide.bs.carousel",
   (e) => handleCarouselChange({ e, carouselNum: 1 })
 )
