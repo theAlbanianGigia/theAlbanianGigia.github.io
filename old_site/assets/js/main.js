@@ -83,9 +83,7 @@ window.addEventListener("load", e => {
     imagesLoaded[section]++
     if (imagesLoaded[section] === imagesNum[section]) {
       sections[section].removeAttribute("hidden")
-      console.log(`#${section}-loader`)
       document.querySelector(`#${section}-loader`).setAttribute("hidden", true)
-      console.log(sections[section])
       console.log(section + " loaded!!")
     }
 
@@ -96,9 +94,9 @@ window.addEventListener("load", e => {
       incrementCounter(img.dataset.src)
     } else {
 
-      img.addEventListener("load", (e) => {
-        console.log(e.target)
-        // incrementCounter()
+      img.addEventListener("load", ({ target }) => {
+        console.log("load event:", { target, targetSection: target.dataset.src })
+        incrementCounter(target.dataset.src)
       }, false)
     }
   })
