@@ -1,3 +1,3 @@
-# The Albanian gigia site
+# The Albanian Gigia site
 
-## for the best gigia of the world
+## For the best Gigia of the world
