@@ -20,9 +20,9 @@ const data = [
     [33, "Il trash", "Quella serata direi che è stat la più bella e la più pazza, tra ascensore e il resto... Wow...", "26 Ottobre 2019"]
   ],
   [
-    [11,"Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
-    [13,"Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
-    [15,"Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
+    [11, "Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
+    [13, "Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
+    [15, "Fai finta che questo sia un titolo bellissimo", "Mentre questa è una descrizione ricca di amore", "6 Settembre 6969 😏"],
     [16, "Primi diti medi", "Credo sia tra i primi diti medi che tu mi abbia mai mandato", "11 Luglio 2019"],
     [15, "Cazzetto", "Come al solito parli male di ABjr... Stronza....", "29 Luglio 2019"],
     [17, "Faccina da culo", "Dio va che faccia da schiaffi che hai qua", "13 Agosto 2019"],
@@ -34,15 +34,14 @@ const data = [
   ]
 ]
 
-
 ;(() => {
-  for (let carouselNum in data) {
+  for (const carouselNum in data) {
     let active = true
-    for (let item of data[carouselNum]) {
+    for (const item of data[carouselNum]) {
       const [rawSrc, title, description, date] = item
 
       updateCarousel({
-        src: `assets/photos/img${rawSrc}.jpg`,
+        src: `assets/photos/img${rawSrc}.jpeg`,
         title,
         description,
         date,
@@ -52,13 +51,58 @@ const data = [
       active = false
     }
   }
-
-  el.addEventListener("transitionend", () => {
-    all.removeAttribute("hidden")
-    document.getElementById("box").remove()
-  })
 })()
 
+el.addEventListener("transitionend", () => {
+  all.removeAttribute("hidden")
+  document.getElementById("box").remove()
+})
+
+const imagesLoaded = {
+  "carousel-0": 0,
+  "carousel-1": 0,
+  baci: 0
+}
+
+const sections = {
+  "carousel-0": document.getElementById("carosello-1"),
+  "carousel-1": document.getElementById("carosello-2"),
+  baci: document.getElementById("baci")
+}
+
+window.addEventListener("load", e => {
+  const images2 = document.images,
+    imagesNum = Object.freeze({
+      "carousel-0": data[0].length,
+      "carousel-1": data[1].length,
+      baci: 2
+    })
+
+
+  const incrementCounter = (section = "baci") => {
+    imagesLoaded[section]++
+    if (imagesLoaded[section] === imagesNum[section]) {
+      sections[section].removeAttribute("hidden")
+      console.log(`#${section}-loader`)
+      document.querySelector(`#${section}-loader`).setAttribute("hidden", true)
+      console.log(sections[section])
+      console.log(section + " loaded!!")
+    }
+
+  }
+
+  ;[].forEach.call(images2, (img) => {
+    if (img.complete) {
+      incrementCounter(img.dataset.src)
+    } else {
+
+      img.addEventListener("load", (e) => {
+        console.log(e.target)
+        // incrementCounter()
+      }, false)
+    }
+  })
+})
 
 $("#carouselExampleCaptions").on("slide.bs.carousel",
   (e) => handleCarouselChange({ e, carouselNum: 0 })

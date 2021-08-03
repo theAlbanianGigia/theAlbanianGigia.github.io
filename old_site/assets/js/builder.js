@@ -27,7 +27,11 @@ const updateCarousel = ({ src, title, description = "", date = "", carouselNum, 
   (carouselNum == 0 ? carousel1 : carousel2)
     .innerHTML += `
       <div class="carousel-item ${active && "active"}">
-        <img src="${src}" alt="" class="d-block w-75 mx-auto bordi">
+        <img
+          src="${src}" alt=""
+          class="d-block w-75 mx-auto bordi"
+          data-src="carousel-${carouselNum}"
+          >
       </div>`
 
   if (active) {

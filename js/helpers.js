@@ -1,4 +1,3 @@
-
 const getParams = () => {
   const url = window.location.search
   let key = ""
